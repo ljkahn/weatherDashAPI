@@ -1,0 +1,2 @@
+define api keys and endpoint url for weather api
+create function to get current weather data
