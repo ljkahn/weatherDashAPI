@@ -7,6 +7,9 @@ var apiKey = "4c52e8bbc2510e2372cef27ffca3a887";
 var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
 
+var fiveDayUrl =`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+
 
 
 
@@ -21,13 +24,10 @@ fetch(apiUrl)
     console.log(data);
 
     for (var i = 0; i <data.length; i++) { 
-        console.log(data[i].weather)};
+        console.log(data[i].main.weather)};
 });
 
 
-
-
-   var fiveDayUrl =`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
    fetch(fiveDayUrl)
   .then(function (response) {
@@ -41,4 +41,6 @@ fetch(apiUrl)
     for (var i = 0; i <data.length; i++) { 
         console.log(data[i].weather)};
 });
+
+
 
