@@ -3,22 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./assets/css/style.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <title>Weather Dashboard</title>
+    <link href="./assets/css/style.css" />
   </head>
+  <title>Weather Dashboard</title>
   <body>
-    <h1>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
-        </div>
-      </nav>
-    </h1>
+    <h1 class="h1">Weather Dashboard</h1>
+    <section class="container">
+      <aside class="input-group rounded sidebar">
+        <input
+          type="search"
+          class="form-control rounded"
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </aside>
+    </section>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
