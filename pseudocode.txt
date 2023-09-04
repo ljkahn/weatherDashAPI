@@ -1,2 +1,11 @@
 define api keys and endpoint url for weather api
 create function to get current weather data
+
+display current weather data for select city
+
+
+create header box for current city weather
+
+parse through current weather data 
+
+**temp wind and humidity**
