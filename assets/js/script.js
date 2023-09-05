@@ -74,9 +74,9 @@ $(function() {
             var template = `
        
             <img src="https://openweathermap.org/img/wn/${newArray[i].weather[0].icon}.png" alt="${newArray[i].weather[0].description}" />
-            <p>temp: ${temperature}</p>
-            <p>wind: ${wind}MPH</p>
-            <p>humidity: ${humidity}%</p>
+            <p>temp: ${temperature}
+            wind: ${wind}MPH
+            humidity: ${humidity}%</p>
             `
             // $("#five-day").empty();
             $("#five-day").append(template);

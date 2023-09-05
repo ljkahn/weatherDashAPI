@@ -20,3 +20,21 @@ main {
     display: flex;
     justify-content: space-around;
 }
+.daily {
+    text-align: center;
+    border: solid black 10px;
+    width:fit-content;
+}
+
+div h2 {
+    text-align: center;
+}
+
+.five-day {
+    text-align: center;
+
+}
+section p {
+    border: solid black 10px;
+
+}
