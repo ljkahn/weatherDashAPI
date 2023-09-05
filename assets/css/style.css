@@ -6,35 +6,37 @@
 .container {
     display: flex;
     justify-content: space-between;
+    width:25%;
     padding: 20px;
 }
 
 .sidebar {
     flex: 1;
     background-color: #f0f0f0;
-    padding: 20px;
+    width: 25%;
     border-radius: 5px;
 }
 
 main {
+    text-align: center;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+
 }
 .daily {
     text-align: center;
-    border: solid black 10px;
-    width:fit-content;
+    border: solid black 5px;
+    width: 50%;
+    align-items: center;
+    
 }
 
 div h2 {
     text-align: center;
 }
 
-.five-day {
-    text-align: center;
-
-}
-section p {
-    border: solid black 10px;
-
+.five{
+    display: flex;
+    align-items: center;
+  width: 50%;
 }

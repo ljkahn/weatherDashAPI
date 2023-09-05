@@ -2,12 +2,11 @@ $(function() {
     
     //define variables for API key, url
     
-    var city = "";
+    var city = "MONACO";
     var apiKey = "4c52e8bbc2510e2372cef27ffca3a887";
     var apiUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=imperial&q=`;
     
-    
-    var fiveDayUrl =`https://api.openweathermap.org/data/2.5/forecast?appid=${apiKey}&units=imperial&q=`;
+var fiveDayUrl =`https://api.openweathermap.org/data/2.5/forecast?appid=${apiKey}&units=imperial&q=`;
 
     
     
@@ -37,6 +36,7 @@ $(function() {
         });
     }
     
+    //create a function to fetch five day weather forecast from weather api
     
     function fiveDay (city) {
         fetch(fiveDayUrl + city)
@@ -59,18 +59,18 @@ $(function() {
             
             
             for (var i = 0; i < newArray.length; i++) {
-                // Access specific properties within each item
+                // access specific properties within each item
                 var wind = newArray[i].wind.speed;
                 var temperature = newArray[i].main.temp;
                 var humidity = newArray[i].main.humidity;
                 console.log(newArray);
                 
-                //   Log the data for the current item
+                //   log the data for the current item
                 console.log("Wind", wind);
                 console.log("Temp", temperature);
                 console.log("Humidity", humidity);
 
-                            
+             //display five day weather forecast on webpage               
             var template = `
        
             <img src="https://openweathermap.org/img/wn/${newArray[i].weather[0].icon}.png" alt="${newArray[i].weather[0].description}" />
@@ -82,21 +82,7 @@ $(function() {
             $("#five-day").append(template);
 
 
-                 
-                   // set up template for each item
-                //    var template = `
-                //    <div class="card">
-                //    <div class="card-body">
-                //    <span class="card-title">${newArray[i].dt_txt}</span>
-                //    <img src="https://openweathermap.org/img/wn/${newArray[i].weather[0].icon}.png" alt="${newArray[i].weather[0].description}" />
-                //    <p>temp: ${temperature}F</p>
-                //    <p>wind: ${wind}MPH</p>
-                //    <p>humidity: ${humidity}%</p>
-                //    </div>
-                //    </div>
-                //    `
-                //    // append template to the DOM
-                //    $("#five-day").append(template); 
+
 
                  
 

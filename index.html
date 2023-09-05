@@ -14,8 +14,9 @@
   </head>
 
   <body>
-    <h1 class="h1">Weather Dashboard</h1>
-    <section class="container">
+    <h1 class="bg-dark text-white pb-5 pt-5 h1">Weather Dashboard</h1>
+
+    <section class="container-fluid mb-5 p-3 pt-4">
       <aside class="input-group rounded sidebar">
         <input
           id="input"
@@ -31,8 +32,12 @@
         </button>
       </aside>
     </section>
-    <div id="daily" class="daily">DAILY</div>
-    <section id="five-day" class="five-day five">FIVE DAY</section>
+    <main>
+      <div id="daily" class="daily">CURRENT WEATHER</div>
+      <section id="five-day" class="five-day">FIVE DAY</section>
+
+      <section>search results</section>
+    </main>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
