@@ -69,6 +69,35 @@ $(function() {
                 console.log("Wind", wind);
                 console.log("Temp", temperature);
                 console.log("Humidity", humidity);
+
+                            
+            var template = `
+       
+            <img src="https://openweathermap.org/img/wn/${newArray[i].weather[0].icon}.png" alt="${newArray[i].weather[0].description}" />
+            <p>temp: ${temperature}</p>
+            <p>wind: ${wind}MPH</p>
+            <p>humidity: ${humidity}%</p>
+            `
+            // $("#five-day").empty();
+            $("#five-day").append(template);
+
+
+                 
+                   // set up template for each item
+                //    var template = `
+                //    <div class="card">
+                //    <div class="card-body">
+                //    <span class="card-title">${newArray[i].dt_txt}</span>
+                //    <img src="https://openweathermap.org/img/wn/${newArray[i].weather[0].icon}.png" alt="${newArray[i].weather[0].description}" />
+                //    <p>temp: ${temperature}F</p>
+                //    <p>wind: ${wind}MPH</p>
+                //    <p>humidity: ${humidity}%</p>
+                //    </div>
+                //    </div>
+                //    `
+                //    // append template to the DOM
+                //    $("#five-day").append(template); 
+
                  
 
             }});
@@ -81,7 +110,7 @@ $(function() {
            var userInput = $("#input").val();
       
            daily(userInput);
-           fiveDay(userInput)
+           fiveDay(userInput);
         })
 
     })
