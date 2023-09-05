@@ -15,3 +15,8 @@
     padding: 20px;
     border-radius: 5px;
 }
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
