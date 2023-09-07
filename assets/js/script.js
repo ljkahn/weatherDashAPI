@@ -99,8 +99,16 @@ var searchHistory = JSON.parse(localStorage.getItem("searchHistory"))|| [];
 function updateHistory () {
     $("#search-history-list").empty();   
     searchHistory.forEach(function(city) {
-            $("#search-history-list").append(`<li>${city}</li>`);
-        });
+            $("#search-history-list").append(`<button class="savedCity">${city}</button>`);
+        }); 
+
+        $(".savedCity").on("click", function (){
+            console.log(this.textContent);
+
+            daily (this.textContent);
+            fiveDay (this.textContent);
+        })
+
     };
     
         $("#button").on("click", function(event){
@@ -108,7 +116,7 @@ function updateHistory () {
 
 
         //store search results
-        //create variable to store searches in
+        //create variable to  store searches in
 
 
 
@@ -121,6 +129,10 @@ function updateHistory () {
            fiveDay(userInput);
         })
         updateHistory();
-    })
+
+ 
+
+
+    });
 
     
