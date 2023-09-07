@@ -40,3 +40,9 @@ div h2 {
     align-items: center;
   width: 50%;
 }
+
+
+
+ul {
+    list-style: none;
+}

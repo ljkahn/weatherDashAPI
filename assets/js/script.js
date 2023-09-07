@@ -2,7 +2,7 @@ $(function() {
     
     //define variables for API key, url
     
-    var city = "MONACO";
+
     var apiKey = "4c52e8bbc2510e2372cef27ffca3a887";
     var apiUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=imperial&q=`;
     
@@ -52,11 +52,11 @@ var fiveDayUrl =`https://api.openweathermap.org/data/2.5/forecast?appid=${apiKey
             
             let newArray = data.list.filter(function (el) {
                 var test = el.dt_txt.split(" ")[1];
-                return test === "12:00:00";
+                return test === "18:00:00";
             }
             );
 
-            
+            $("#five-day").empty();
             
             for (var i = 0; i < newArray.length; i++) {
                 // access specific properties within each item
@@ -72,33 +72,55 @@ var fiveDayUrl =`https://api.openweathermap.org/data/2.5/forecast?appid=${apiKey
 
              //display five day weather forecast on webpage               
             var template = `
-       
-            <img src="https://openweathermap.org/img/wn/${newArray[i].weather[0].icon}.png" alt="${newArray[i].weather[0].description}" />
-            <p>temp: ${temperature}
-            wind: ${wind}MPH
-            humidity: ${humidity}%</p>
+            <div class="col card bg-dark" >
+            <div class="card-body bg-dark text-white">
+              <h5 class="card-title">${newArray[i].dt_txt.split(" ")[0]}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">
+                <img src="https://openweathermap.org/img/wn/${newArray[i].weather[0].icon}.png" alt="${newArray[i].weather[0].description}" />
+              </h6>
+              <p class="card-text">
+                temp: ${temperature}
+                wind: ${wind}MPH
+                humidity: ${humidity}%
+              </p>
+    
+            </div>
             `
-            // $("#five-day").empty();
+            
             $("#five-day").append(template);
 
-
-
-
-                 
-
-            }});
-        }
+}});
+}
         
         
       
+var searchHistory = JSON.parse(localStorage.getItem("searchHistory"))|| [];
+
+function updateHistory () {
+    $("#search-history-list").empty();   
+    searchHistory.forEach(function(city) {
+            $("#search-history-list").append(`<li>${city}</li>`);
+        });
+    };
     
         $("#button").on("click", function(event){
            var userInput = $("#input").val();
+
+
+        //store search results
+        //create variable to store searches in
+
+
+
+           var city =$("#input").val();
+           searchHistory.unshift(city);
+           localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+           updateHistory();
       
            daily(userInput);
            fiveDay(userInput);
         })
-
+        updateHistory();
     })
 
     
