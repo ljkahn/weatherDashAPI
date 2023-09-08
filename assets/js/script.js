@@ -26,10 +26,10 @@ $(function () {
 
 
                 var template = `
-            <h2>${data.name} <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" /></h2>
-            <p>temp: ${data.main.temp}F</p>
-            <p>wind: ${data.wind.speed}MPH</p>
-            <p>humidity: ${data.main.humidity}%</p>
+            <h2 class="text-white">${data.name} <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" /></h2>
+            <p class="text-white">temp: ${data.main.temp}F</p>
+            <p class="text-white">wind: ${data.wind.speed}MPH</p>
+            <p class="text-white">humidity: ${data.main.humidity}%</p>
             `
 
                 $("#daily").empty();
@@ -80,7 +80,7 @@ $(function () {
               <h6 class="card-subtitle mb-2 text-body-secondary">
                 <img src="https://openweathermap.org/img/wn/${newArray[i].weather[0].icon}.png" alt="${newArray[i].weather[0].description}" />
               </h6>
-              <p class="card-text">
+              <p class="card-text color-white">
                 temp: ${temperature}
                 wind: ${wind}MPH
                 humidity: ${humidity}%
