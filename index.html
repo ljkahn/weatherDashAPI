@@ -13,26 +13,26 @@
 <body>
   <h1 class="bg-dark text-white pb-5 pt-5 h1 d-flex justify-content-center">Weather Dashboard</h1>
 
-  <section class="container mb-5 p-3 pt-4">
+  <section class="container mb-5 p-3 pt-4 bg-primary bg-gradient">
     <div class="row">
       <div class="col-md-4">
         <aside class="input-group rounded sidebar">
           <input id="input" type="search" class="form-control rounded" placeholder="City" aria-label="Search"
             aria-describedby="search-addon" />
 
-          <button type="button" class="btn btn-secondary btn-sm mb-20" id="button">
+          <button type="button" class="btn btn-secondary btn-sm p-3 shadow" id="button">
             Search
           </button>
 
         </aside>
         <div id="search-history">
-          <h4>Previous Searches</h4>
-          <ul id="search-history-list" class="d-flex flex-column w-50"></ul>
+          <h4 class="m-3">Previous Searches</h4>
+          <ul id="search-history-list" class="d-flex flex-column w-50 m-3"></ul>
         </div>
 
       </div>
       <div class="col-md-8">
-        <h2 id="daily" class="daily">CURRENT WEATHER</h2>
+        <h2 id="daily" class="hide daily"></h2>
 
         <section id="five-day" class="row five-day">
 
